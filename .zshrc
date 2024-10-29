@@ -21,3 +21,11 @@ source <(fzf --zsh)
 # Load thefuck
 eval $(thefuck --alias)
 eval $(thefuck --alias fuck)
+
+printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/ahnafsakil/.dart-cli-completion/zsh-config.zsh ]] && . /Users/ahnafsakil/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+export PATH="/Users/ahnafsakil/.shorebird/bin:$PATH"
