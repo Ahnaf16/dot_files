@@ -17,12 +17,15 @@ alias fpg='f pub get'
 alias fpu='f pub upgrade'
 alias dpg='d pub get'
 alias dpu='d pub upgrade'
+alias dart-active='d pub global activate'
+alias dart-deactivate='d pub global deactivate'
 
 alias sb='shorebird'
 alias mel='melos'
 alias mbs='melos bs'
 alias mv='melos version'
 alias aw='appwrite'
+alias fgen='fluttergen'
 
 
 alias yless='jless --yam'

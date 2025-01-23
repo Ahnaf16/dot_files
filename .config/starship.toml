@@ -4,12 +4,15 @@
 add_newline = true
 command_timeout = 1000
 
+
 format = """
 $os\
 $username\
 $directory\
 $git_branch\
-$git_status
+$git_status\
+$fill\
+$dart 
 $character
 """
 
@@ -43,22 +46,23 @@ show_always = true
 # Shows the hostname
 [hostname]
 ssh_only = false
-format = 'on [$hostname](bold yellow) '
+format = '[$hostname](bold yellow) '
 disabled = false
 
 # Shows current directory
 [directory]
-truncation_length = 1
+truncation_length = 3
 truncation_symbol = '…/'
+truncate_to_repo = false
 home_symbol = '󰋜 ~'
 read_only_style = '197'
 read_only = '  '
-format = 'at [$path]($style)[$read_only]($read_only_style) '
+format = '[$path]($style)[$read_only]($read_only_style) '
 
 # Shows current git branch
 [git_branch]
 symbol = ' '
-format = 'via [$symbol$branch]($style)'
+format = '[$symbol$branch]($style)'
 # truncation_length = 4
 truncation_symbol = '…/'
 style = 'bold green'
@@ -67,7 +71,7 @@ style = 'bold green'
 [git_status]
 format = '([ \( $all_status$ahead_behind\)]($style) )'
 style = 'bold green'
-conflicted = '[ confliced=${count}](red) '
+conflicted = '[ conflicted=${count}](red) '
 up_to_date = '[󰘽 up-to-date](green) '
 untracked = '[󰋗 untracked=${count}](red) '
 ahead = ' ahead=${count}'
@@ -89,4 +93,7 @@ use_12hr = true
 
 [dart]
 symbol = " "
-format = "via [$symbol($version)]($style)"
+format = "[$symbol($version)]($style)"
+
+[fill]
+symbol = " "
