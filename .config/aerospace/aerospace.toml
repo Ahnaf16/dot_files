@@ -20,7 +20,7 @@ exec-on-workspace-change = [
 ]
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -51,13 +51,29 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
 automatically-unhide-macos-hidden-apps = false
 
-[[on-window-detected]]
-if.app-id = "com.mitchellh.ghostty"
-run = ["layout tiling"]
+# [[on-window-detected]]
+# if.app-id = "com.mitchellh.ghostty"
+# run = ["layout tiling"]
 
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'appcleaner'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'freetube'
+run = ['layout floating', 'move-node-to-workspace free_tube']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'shottr'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'free download manager'
 run = 'layout floating'
 
 [[on-window-detected]]
@@ -158,6 +174,7 @@ alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
+alt-f = 'workspace free_tube'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -169,6 +186,8 @@ alt-shift-6 = 'move-node-to-workspace 6'
 alt-shift-7 = 'move-node-to-workspace 7'
 alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-f = 'move-node-to-workspace free_tube'
+
 
 
 alt-shift-ctrl-h = ['join-with left', 'mode main']
@@ -185,7 +204,7 @@ alt-shift-ctrl-f = 'layout floating tiling'
 4 = 'main'
 5 = 'main'
 6 = 'main'
-7 = 'main'
+7 = 'secondary'
 8 = 'secondary'
 9 = 'secondary'
 
